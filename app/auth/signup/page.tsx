@@ -97,12 +97,12 @@ export default function SignupPage() {
         <div className="text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold">GP</span>
+              <span className="text-primary-foreground font-bold">CG</span>
             </div>
-            <span className="font-semibold text-xl">Grammar Polisher</span>
+            <span className="font-semibold text-xl">Clever Grammar</span>
           </div>
           <h1 className="text-2xl font-bold">Create your account</h1>
-          <p className="text-muted-foreground">Get started with your lifetime access to Grammar Polisher</p>
+          <p className="text-muted-foreground">Get started with your lifetime access to Clever Grammar</p>
         </div>
 
         {/* Signup Form */}

@@ -63,12 +63,12 @@ export default function LoginPage() {
         <div className="text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold">GP</span>
+              <span className="text-primary-foreground font-bold">CG</span>
             </div>
-            <span className="font-semibold text-xl">Grammar Polisher</span>
+            <span className="font-semibold text-xl">Clever Grammar</span>
           </div>
           <h1 className="text-2xl font-bold">Welcome back</h1>
-          <p className="text-muted-foreground">Sign in to your account to continue polishing your text</p>
+          <p className="text-muted-foreground">Sign in to your account to continue improving your text</p>
         </div>
 
         {/* Demo Mode Option */}
@@ -77,9 +77,7 @@ export default function LoginPage() {
             <p className="text-sm text-blue-800 mb-2">
               <strong>Try Demo Mode</strong>
             </p>
-            <p className="text-xs text-blue-600 mb-3">
-              Test Grammar Polisher with 3 free corrections before signing up.
-            </p>
+            <p className="text-xs text-blue-600 mb-3">Test Clever Grammar with 3 free corrections before signing up.</p>
             <Button
               onClick={() => router.push("/app")}
               variant="outline"
