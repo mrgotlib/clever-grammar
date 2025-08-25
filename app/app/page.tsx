@@ -327,9 +327,9 @@ export default function AppPage() {
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">GP</span>
+              <span className="text-primary-foreground font-bold text-sm">CG</span>
             </div>
-            <span className="font-semibold text-lg">Grammar Polisher</span>
+            <span className="font-semibold text-lg">Clever Grammar</span>
             {isDemoMode && (
               <Badge variant="outline" className="ml-2">
                 Demo Mode
@@ -373,7 +373,7 @@ export default function AppPage() {
             <div>
               <h3 className="font-medium text-amber-800">🚀 You're in Demo Mode</h3>
               <p className="text-sm text-amber-700 mt-1">
-                Try Grammar Polisher with 3 free corrections. Sign up for unlimited access!
+                Try Clever Grammar with 3 free corrections. Sign up for unlimited access!
               </p>
             </div>
             <div className="flex gap-2">
@@ -381,7 +381,7 @@ export default function AppPage() {
                 🔄 Reset Demo
               </Button>
               <Button onClick={() => router.push("/auth/signup")} size="sm">
-                Get Full Access - $97
+                Get Full Access - $197
               </Button>
             </div>
           </div>
