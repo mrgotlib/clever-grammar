@@ -79,7 +79,10 @@ export default function LoginPage() {
             </p>
             <p className="text-xs text-blue-600 mb-3">Test Clever Grammar with 3 free corrections before signing up.</p>
             <Button
-              onClick={() => router.push("/app")}
+              onClick={() => {
+                console.log("[v0] Demo button clicked, navigating to /app")
+                window.location.href = "/app"
+              }}
               variant="outline"
               size="sm"
               className="border-blue-300 text-blue-700 hover:bg-blue-100"
