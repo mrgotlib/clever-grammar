@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -45,7 +47,22 @@ export default function HomePage() {
                 Get Lifetime Access – $197
               </Button>
             </Link>
-            <p className="text-sm text-muted-foreground">No monthly fees • Instant access</p>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-lg px-8 py-6 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+              onClick={() => {
+                console.log("[v0] Try Demo Mode button clicked")
+                window.location.href = "/app"
+              }}
+            >
+              Try Demo Mode - Free
+            </Button>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-muted-foreground mb-12">
+            <p>No monthly fees • Instant access</p>
+            <span className="hidden sm:inline">•</span>
+            <p>3 free corrections to test all features</p>
           </div>
 
           {/* Demo Preview */}

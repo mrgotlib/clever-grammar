@@ -5,9 +5,9 @@ import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Grammar Polisher - Fix Your English Grammar in Seconds",
+  title: "Clever Grammar - Fix Your English Grammar in Seconds", // Updated title to Clever Grammar
   description:
-    "AI-powered grammar correction tool with tone selection. Lifetime access for $97. Perfect for content creators, students, and professionals.",
+    "AI powered grammar correction tool with 12 professional tones including Plagiarism Checker. Lifetime access for $197. Perfect for content creators, students, and professionals.", // Updated description with new features and pricing
   generator: "v0.app",
 }
 

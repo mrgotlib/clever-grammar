@@ -11,6 +11,7 @@ import { Separator } from "@/components/ui/separator"
 import { Copy, History, Sparkles, User, LogOut } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { createClient } from "@/lib/supabase/client"
+import { ThemeToggle } from "@/components/theme-toggle" // Added theme toggle import
 
 type Tone =
   | "formal"
@@ -23,7 +24,8 @@ type Tone =
   | "empathetic"
   | "seo-optimized"
   | "hook-generator"
-  | "complete-rewrite" // Added complete-rewrite tone type
+  | "complete-rewrite"
+  | "plagiarism-checker" // Added plagiarism-checker as 12th tone
 
 interface Correction {
   id: string
@@ -75,11 +77,13 @@ export default function AppPage() {
             data: { subscription },
           } = supabase.auth.onAuthStateChange(async (event, session) => {
             if (event === "SIGNED_OUT") {
-              router.push("/auth/login")
             } else if (session?.user) {
               setUser(session.user)
               setIsDemoMode(false)
               await loadUserData(session.user.id)
+            } else {
+              setUser(null)
+              setIsDemoMode(true)
             }
           })
 
@@ -316,7 +320,8 @@ export default function AppPage() {
       empathetic: "Understanding and supportive",
       "seo-optimized": "Keyword-rich and search engine friendly",
       "hook-generator": "Transforms text into powerful, attention-grabbing hooks",
-      "complete-rewrite": "Completely rewrites text for maximum clarity and impact", // Added complete-rewrite description
+      "complete-rewrite": "Completely rewrites text for maximum clarity and impact",
+      "plagiarism-checker": "Checks for originality and suggests unique alternatives", // Added plagiarism checker description
     }
     return descriptions[tone]
   }
@@ -337,6 +342,7 @@ export default function AppPage() {
             )}
           </div>
           <div className="flex items-center gap-4">
+            <ThemeToggle /> {/* Added dark/light mode toggle button */}
             {isDemoMode ? (
               <>
                 <Badge variant="secondary">{3 - demoUsage} demo corrections left</Badge>
@@ -493,6 +499,16 @@ export default function AppPage() {
                           <div className="font-medium">Complete Rewrite</div>
                           <div className="text-xs text-muted-foreground">
                             Completely rewrites text for maximum clarity and impact
+                          </div>
+                        </div>
+                      </SelectItem>
+                      <SelectItem value="plagiarism-checker">
+                        {" "}
+                        {/* Added plagiarism checker option */}
+                        <div>
+                          <div className="font-medium">Plagiarism Checker</div>
+                          <div className="text-xs text-muted-foreground">
+                            Checks for originality and suggests unique alternatives
                           </div>
                         </div>
                       </SelectItem>

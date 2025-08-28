@@ -81,7 +81,14 @@ export default function LoginPage() {
             <Button
               onClick={() => {
                 console.log("[v0] Demo button clicked, navigating to /app")
-                window.location.href = "/app"
+                try {
+                  // Try router first
+                  router.push("/app")
+                } catch (error) {
+                  console.log("[v0] Router failed, using window.location")
+                  // Fallback to window.location
+                  window.location.href = "/app"
+                }
               }}
               variant="outline"
               size="sm"

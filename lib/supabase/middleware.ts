@@ -29,12 +29,7 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // Only redirect if trying to access protected routes without authentication
-  if (!user && request.nextUrl.pathname.startsWith("/app") && !request.nextUrl.pathname.includes("demo")) {
-    const url = request.nextUrl.clone()
-    url.pathname = "/auth/login"
-    return NextResponse.redirect(url)
-  }
+  // Remove all authentication checks for /app route to enable demo access
 
   return supabaseResponse
 }

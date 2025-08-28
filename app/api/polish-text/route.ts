@@ -91,7 +91,7 @@ function simulateGrammarCorrection(text: string, tone: string): string {
     chauffer: "chauffeur",
     collegue: "colleague",
     commitee: "committee",
-    concensus: "consensus",
+    consensus: "consensus",
     congradulations: "congratulations",
     convinient: "convenient",
     curiousity: "curiosity",
@@ -475,7 +475,7 @@ function simulateGrammarCorrection(text: string, tone: string): string {
       corrected = corrected.replace(/\bprove\b/gi, "substantiate conclusively")
       corrected = corrected.replace(/\bthink\b/gi, "hypothesize")
       corrected = corrected.replace(/\bfind\b/gi, "ascertain through analysis")
-      corrected = corrected.replace(/\buse\b/gi, "utilize methodologically")
+      corrected = corrected.replace(/\buse\b/gi, "execute methodologically")
       corrected = corrected.replace(/\bhelp\b/gi, "facilitate comprehensively")
       corrected = corrected.replace(/\bmake\b/gi, "constitute fundamentally")
       corrected = corrected.replace(/\bget\b/gi, "acquire systematically")
@@ -584,116 +584,6 @@ function simulateGrammarCorrection(text: string, tone: string): string {
       corrected = corrected.replace(/\beasy\b/gi, "simple step-by-step")
       break
 
-    case "hook-generator":
-      if (
-        !corrected.match(
-          /^(What if|Imagine|Did you know|Here's why|The secret|Stop|Warning|Attention|You won't believe|This changes everything|The shocking truth)/i,
-        )
-      ) {
-        const hookStarters = [
-          "🚨 BREAKING: What if I told you that",
-          "💥 SHOCKING DISCOVERY: Imagine if",
-          "⚡ GAME CHANGER: Here's the mind-blowing truth:",
-          "🔥 STOP EVERYTHING because",
-          "💎 The million-dollar secret that nobody talks about:",
-          "⚠️ URGENT WARNING:",
-          "🎯 ATTENTION: This will change your life forever -",
-          "🤯 You absolutely won't believe what happened when",
-          "🚀 This revolutionary discovery will change everything:",
-          "💰 The one secret that billionaires don't want you to know:",
-          "🔓 FINALLY REVEALED: The hidden truth about",
-          "⭐ EXCLUSIVE: What industry experts are desperately hiding:",
-        ]
-        const randomStarter = hookStarters[Math.floor(Math.random() * hookStarters.length)]
-        corrected = `${randomStarter} ${corrected.toLowerCase()}`
-      }
-
-      corrected = corrected.replace(/\bgood\b/gi, "MIND-BLOWING")
-      corrected = corrected.replace(/\bnice\b/gi, "ABSOLUTELY INCREDIBLE")
-      corrected = corrected.replace(/\bbig\b/gi, "MASSIVE")
-      corrected = corrected.replace(/\bsmall\b/gi, "tiny")
-      corrected = corrected.replace(/\bshow\b/gi, "EXPOSE")
-      corrected = corrected.replace(/\btell\b/gi, "REVEAL THE SHOCKING TRUTH")
-      corrected = corrected.replace(/\bmake\b/gi, "CREATE")
-      corrected = corrected.replace(/\bget\b/gi, "GRAB")
-      corrected = corrected.replace(/\bhelp\b/gi, "TRANSFORM YOUR LIFE")
-      corrected = corrected.replace(/\bfind\b/gi, "DISCOVER")
-      corrected = corrected.replace(/\blearn\b/gi, "MASTER")
-      corrected = corrected.replace(/\buse\b/gi, "UNLEASH")
-      corrected = corrected.replace(/\bwork\b/gi, "DOMINATE")
-      corrected = corrected.replace(/\btry\b/gi, "CRUSH")
-      corrected = corrected.replace(/\bstart\b/gi, "LAUNCH")
-      corrected = corrected.replace(/\bstop\b/gi, "ELIMINATE FOREVER")
-      corrected = corrected.replace(/\bchange\b/gi, "REVOLUTIONIZE")
-      corrected = corrected.replace(/\bimprove\b/gi, "SKYROCKET")
-      corrected = corrected.replace(/\bincrease\b/gi, "EXPLODE")
-      corrected = corrected.replace(/\bdecrease\b/gi, "SLASH")
-      corrected = corrected.replace(/\bfast\b/gi, "LIGHTNING-FAST")
-      corrected = corrected.replace(/\bslow\b/gi, "painfully slow")
-      corrected = corrected.replace(/\beasy\b/gi, "EFFORTLESS")
-      corrected = corrected.replace(/\bhard\b/gi, "BRUTAL")
-      corrected = corrected.replace(/\bdifficult\b/gi, "IMPOSSIBLE")
-      corrected = corrected.replace(/\bexpensive\b/gi, "RIDICULOUSLY OVERPRICED")
-      corrected = corrected.replace(/\bcheap\b/gi, "DIRT CHEAP")
-      corrected = corrected.replace(/\bfree\b/gi, "ABSOLUTELY FREE")
-      corrected = corrected.replace(/\bnew\b/gi, "GROUNDBREAKING")
-      corrected = corrected.replace(/\bold\b/gi, "OUTDATED")
-      corrected = corrected.replace(/\bbest\b/gi, "ULTIMATE")
-      corrected = corrected.replace(/\bworst\b/gi, "DEVASTATING")
-      corrected = corrected.replace(/\bstore\b/gi, "EXCLUSIVE MARKETPLACE")
-      corrected = corrected.replace(/\bbought\b/gi, "SNATCHED UP")
-      corrected = corrected.replace(/\bwent\b/gi, "RUSHED TO")
-      corrected = corrected.replace(/\bsaw\b/gi, "WITNESSED")
-      corrected = corrected.replace(/\bthought\b/gi, "REALIZED")
-      corrected = corrected.replace(/\bfelt\b/gi, "EXPERIENCED")
-
-      corrected = corrected.replace(/\bnow\b/gi, "RIGHT NOW")
-      corrected = corrected.replace(/\btoday\b/gi, "TODAY ONLY")
-      corrected = corrected.replace(/\bsoon\b/gi, "BEFORE IT'S TOO LATE")
-      corrected = corrected.replace(/\bhappy\b/gi, "ECSTATIC")
-      corrected = corrected.replace(/\bsad\b/gi, "DEVASTATED")
-      corrected = corrected.replace(/\bangry\b/gi, "FURIOUS")
-      corrected = corrected.replace(/\bscared\b/gi, "TERRIFIED")
-      corrected = corrected.replace(/\bexcited\b/gi, "PUMPED")
-
-      if (!corrected.match(/[!?]$/)) {
-        const endings = [
-          "! 🔥",
-          "... and you won't believe what happened next! 😱",
-          "... but there's a SHOCKING catch! ⚡",
-          "... and it changed EVERYTHING! 🚀",
-          "... are you ready for this BOMBSHELL? 💣",
-          "... this will absolutely BLOW YOUR MIND! 🤯",
-          "... and the results will SHOCK you! ⚡",
-          "... but only if you act NOW! ⏰",
-        ]
-        const randomEnding = endings[Math.floor(Math.random() * endings.length)]
-        corrected = corrected.replace(/\.$/, randomEnding)
-      }
-      break
-
-    case "technical":
-      corrected = corrected.replace(/\bfix\b/gi, "optimize systematically")
-      corrected = corrected.replace(/\bmake\b/gi, "implement programmatically")
-      corrected = corrected.replace(/\bshow\b/gi, "render dynamically")
-      corrected = corrected.replace(/\buse\b/gi, "execute efficiently")
-      corrected = corrected.replace(/\bcheck\b/gi, "verify algorithmically")
-      corrected = corrected.replace(/\btest\b/gi, "validate comprehensively")
-      corrected = corrected.replace(/\bwork\b/gi, "function optimally")
-      corrected = corrected.replace(/\brun\b/gi, "operate seamlessly")
-      corrected = corrected.replace(/\bstop\b/gi, "terminate process")
-      corrected = corrected.replace(/\bstart\b/gi, "initialize system")
-      corrected = corrected.replace(/\bchange\b/gi, "modify parameters")
-      corrected = corrected.replace(/\bsave\b/gi, "store in database")
-      corrected = corrected.replace(/\bopen\b/gi, "access interface")
-      corrected = corrected.replace(/\bclose\b/gi, "terminate session")
-      corrected = corrected.replace(/\bfind\b/gi, "locate via algorithm")
-      corrected = corrected.replace(/\bexpensive\b/gi, "resource-intensive")
-      corrected = corrected.replace(/\bstore\b/gi, "data repository")
-      corrected = corrected.replace(/\bbought\b/gi, "acquired through API")
-      corrected = corrected.replace(/\bwent\b/gi, "navigated to endpoint")
-      break
-
     case "complete-rewrite":
       // First, break down the text into key concepts
       const sentences = corrected.split(/[.!?]+/).filter((s) => s.trim().length > 0)
@@ -778,9 +668,86 @@ function simulateGrammarCorrection(text: string, tone: string): string {
       }
 
       break
-  }
 
-  console.log("[v0] After tone application:", corrected)
+    case "plagiarism-checker":
+      // Replace common phrases with unique alternatives
+      corrected = corrected.replace(/\bin conclusion\b/gi, "to summarize the key findings")
+      corrected = corrected.replace(/\bin summary\b/gi, "drawing together these insights")
+      corrected = corrected.replace(/\bfirst of all\b/gi, "initially")
+      corrected = corrected.replace(/\bsecond of all\b/gi, "subsequently")
+      corrected = corrected.replace(/\blast but not least\b/gi, "finally and importantly")
+      corrected = corrected.replace(/\bon the other hand\b/gi, "conversely")
+      corrected = corrected.replace(/\bin other words\b/gi, "expressed differently")
+      corrected = corrected.replace(/\bfor example\b/gi, "to illustrate this point")
+      corrected = corrected.replace(/\bfor instance\b/gi, "as demonstrated by")
+      corrected = corrected.replace(/\bas a result\b/gi, "consequently")
+      corrected = corrected.replace(/\btherefore\b/gi, "thus")
+      corrected = corrected.replace(/\bhowever\b/gi, "nevertheless")
+      corrected = corrected.replace(/\bmoreover\b/gi, "additionally")
+      corrected = corrected.replace(/\bfurthermore\b/gi, "beyond this")
+      corrected = corrected.replace(/\bin addition\b/gi, "complementing this")
+      corrected = corrected.replace(/\bdue to the fact that\b/gi, "because")
+      corrected = corrected.replace(/\bin spite of the fact that\b/gi, "although")
+      corrected = corrected.replace(/\bit is important to note that\b/gi, "notably")
+      corrected = corrected.replace(/\bit should be mentioned that\b/gi, "worth highlighting")
+      corrected = corrected.replace(/\bit is worth noting that\b/gi, "significantly")
+
+      // Replace overused academic phrases
+      corrected = corrected.replace(/\baccording to\b/gi, "as reported by")
+      corrected = corrected.replace(/\bstudies show that\b/gi, "research indicates")
+      corrected = corrected.replace(/\bresearch shows that\b/gi, "evidence suggests")
+      corrected = corrected.replace(/\bit has been proven that\b/gi, "findings demonstrate")
+      corrected = corrected.replace(/\bmany people believe\b/gi, "widespread opinion suggests")
+      corrected = corrected.replace(/\bit is widely accepted\b/gi, "consensus indicates")
+      corrected = corrected.replace(/\bin today's society\b/gi, "in contemporary culture")
+      corrected = corrected.replace(/\bin the modern world\b/gi, "within current global contexts")
+      corrected = corrected.replace(/\bthroughout history\b/gi, "across historical periods")
+      corrected = corrected.replace(/\bsince the beginning of time\b/gi, "throughout human existence")
+
+      // Replace common business phrases
+      corrected = corrected.replace(/\bat the end of the day\b/gi, "ultimately")
+      corrected = corrected.replace(/\bthink outside the box\b/gi, "approach creatively")
+      corrected = corrected.replace(/\bsynergize\b/gi, "collaborate effectively")
+      corrected = corrected.replace(/\bleverage\b/gi, "utilize strategically")
+      corrected = corrected.replace(/\bcircle back\b/gi, "revisit")
+      corrected = corrected.replace(/\btouch base\b/gi, "connect")
+      corrected = corrected.replace(/\bmove the needle\b/gi, "create meaningful impact")
+      corrected = corrected.replace(/\blow-hanging fruit\b/gi, "easily achievable goals")
+
+      // Replace clichéd expressions with fresh alternatives
+      corrected = corrected.replace(/\btime will tell\b/gi, "future developments will reveal")
+      corrected = corrected.replace(/\bonly time will tell\b/gi, "subsequent events will determine")
+      corrected = corrected.replace(/\bit goes without saying\b/gi, "clearly")
+      corrected = corrected.replace(/\bneedless to say\b/gi, "obviously")
+      corrected = corrected.replace(/\bto make a long story short\b/gi, "briefly")
+      corrected = corrected.replace(/\bthe bottom line is\b/gi, "essentially")
+      corrected = corrected.replace(/\bwhen all is said and done\b/gi, "ultimately")
+      corrected = corrected.replace(/\bat this point in time\b/gi, "currently")
+      corrected = corrected.replace(/\bin this day and age\b/gi, "presently")
+
+      // Suggest more original word choices
+      corrected = corrected.replace(/\bvery important\b/gi, "crucial")
+      corrected = corrected.replace(/\bvery good\b/gi, "exceptional")
+      corrected = corrected.replace(/\bvery bad\b/gi, "detrimental")
+      corrected = corrected.replace(/\bvery big\b/gi, "substantial")
+      corrected = corrected.replace(/\bvery small\b/gi, "minimal")
+      corrected = corrected.replace(/\bvery fast\b/gi, "rapid")
+      corrected = corrected.replace(/\bvery slow\b/gi, "gradual")
+      corrected = corrected.replace(/\bvery difficult\b/gi, "challenging")
+      corrected = corrected.replace(/\bvery easy\b/gi, "straightforward")
+      corrected = corrected.replace(/\bvery interesting\b/gi, "compelling")
+
+      // Add originality markers
+      if (corrected.length > 50) {
+        corrected += " [Uniqueness enhanced: Common phrases replaced with distinctive alternatives]"
+      }
+
+      break
+
+    default:
+      // No specific tone transformations
+      break
+  }
 
   corrected = corrected.charAt(0).toUpperCase() + corrected.slice(1)
   corrected = corrected.replace(/\s+/g, " ")
