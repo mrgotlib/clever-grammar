@@ -3,11 +3,12 @@ import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import "./globals.css"
+import SalesChatbot from "@/components/sales-chatbot"
 
 export const metadata: Metadata = {
-  title: "Clever Grammar - Fix Your English Grammar in Seconds", // Updated title to Clever Grammar
+  title: "Clever Grammar - Fix Your English Grammar in Seconds",
   description:
-    "AI powered grammar correction tool with 12 professional tones including Plagiarism Checker. Lifetime access for $197. Perfect for content creators, students, and professionals.", // Updated description with new features and pricing
+    "AI powered grammar correction tool with 12 professional tones including Plagiarism Checker. Lifetime access for $197. Perfect for content creators, students, and professionals.",
   generator: "v0.app",
 }
 
@@ -27,7 +28,10 @@ html {
 }
         `}</style>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <SalesChatbot />
+      </body>
     </html>
   )
 }
